@@ -210,13 +210,13 @@ def eyquill_method(img, epsilon):
 
 
 
-
+d#scdscsdcsd
 
 
 #image_downsampling('spiderman_2.jpg', 3)
 #image_grey_shades('pict.jpg')
 #image_upsampling('spiderman_2.jpg', 2)
-#image_1_prohod('pict.jpg', 1, 1)
+#image_1_prohod('pict.jpg', 1, 1)p
 #image_2_prohod('spiderman_2.jpg', 7, 2)
 #print(otsu_threshold(create_hist('spiderman_2.jpg')))
 #create_hist('spiderman_2.jpg')
