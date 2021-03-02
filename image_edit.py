@@ -220,7 +220,7 @@ def eyquill_method(img, epsilon):
 #image_2_prohod('spiderman_2.jpg', 7, 2)
 #print(otsu_threshold(create_hist('spiderman_2.jpg')))
 #create_hist('spiderman_2.jpg')
-img_color =  Image.open('pict.jpg')
+img_color =  Image.open('smile.png').convert('RGB')
 img_grey = image_grey_shades_for_threshold(img_color)
 eyquill_method(img_grey, 10).show()
 
