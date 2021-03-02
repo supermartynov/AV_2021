@@ -210,7 +210,6 @@ def eyquill_method(img, epsilon):
 
 
 
-d#scdscsdcsd
 
 
 #image_downsampling('spiderman_2.jpg', 3)
