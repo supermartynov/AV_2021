@@ -129,9 +129,10 @@ def create_hist(img, start_tuple, end_tuple):
    pix = list()
    for i in range(start_tuple[0], end_tuple[0]):
       for j in range(start_tuple[1], end_tuple[1]):
-         pix.append( img.getpixel((i, j)))
+         pix.append(img.getpixel((i, j)))
    hist = plt.hist(pix, range(0, max(pix) + 1))
    return hist
+
 
 '''def otsu_threshold(histogram):
    t_max = 0
@@ -175,13 +176,12 @@ def otsu_threshold(histogram):
    return t_max
 
 
+
 def eyquill_method(img, epsilon):
    result_img = img.copy()
    start_time = time.time()
-
    for x in range(7, img.width - 7, 3):
          for y in range(7, img.height - 7, 3):
-
             big_window_hist_for_threshold = create_hist(img, (x - 7, y - 7), (x + 8, y + 8))
             t = otsu_threshold(big_window_hist_for_threshold)
             big_window_hist = big_window_hist_for_threshold[0]
@@ -191,15 +191,15 @@ def eyquill_method(img, epsilon):
             mean_right = mean(big_window_hist[t + 1: big_window_hist_len])
 
             if abs(mean_right - mean_left) > epsilon:
-               for i in range(x - 1, x + 2):
-                  for j in range(y - 1, y + 2):
+               for i in range(x - 2, x + 1):
+                  for j in range(y - 2, y + 1):
                      if result_img.getpixel((i, j)) < t:
                         result_img.putpixel((i, j), 0)
                      else:
                         result_img.putpixel((i, j), 255)
             else:
-               for i in range(x - 1, x + 2):
-                  for j in range(y - 1, y + 2):
+               for i in range(x - 2, x + 1):
+                  for j in range(y - 2, y + 1):
                      if big_window_mean > 127:
                         result_img.putpixel((i, j), 255)
                      else:
@@ -219,9 +219,11 @@ def eyquill_method(img, epsilon):
 #image_2_prohod('spiderman_2.jpg', 7, 2)
 #print(otsu_threshold(create_hist('spiderman_2.jpg')))
 #create_hist('spiderman_2.jpg')
-img_color =  Image.open('smile.png').convert('RGB')
+#img_color =  Image.open('smile.png').convert('RGB')
+img_color =  Image.open('lednikoviy.jpeg').convert('RGB')
 img_grey = image_grey_shades_for_threshold(img_color)
-eyquill_method(img_grey, 10).show()
+print(otsu_threshold(create_hist('spiderman_2.jpg')))
+#eyquill_method(img_grey, 0.15).show()
 
 
 

@@ -56,5 +56,5 @@ def otsu_threshold(histogram):
    print(time.time() - start_time)
    return t_max
 
-create_hist('black_white.jpg')
-print(otsu_threshold(create_hist('V-rukah-monaha.jpg')))
+create_hist('book.jpg')
+print(otsu_threshold(create_hist('book.jpg')))
